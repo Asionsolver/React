@@ -1,1 +1,12 @@
-First react App
+Components
+
+Two layer of Components.
+
+1. Data and Logic layer (Optional)
+! State
+! Variable or Properties
+! Function or Methods
+! Life Cycle Methods
+
+2. Representation layer (Required)
+! JSX
