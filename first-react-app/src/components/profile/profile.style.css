@@ -1,0 +1,75 @@
+.container{
+    width: 100%;
+    min-height: 100px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-top: 50px;
+}
+
+.bio{
+    margin-bottom: 30px;
+}
+
+.bio h3{
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.bio p{
+    font-size: 17px;
+    color: #222;
+    margin-top: 5px;
+}
+
+.skills{
+    margin-bottom: 30px;
+}
+
+.skills h3{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.skills ul{
+    list-style-type: none;
+}
+
+.skills ul li{
+    display: inline-block;
+    margin-right: 20px;
+    padding: 5px 15px;
+    background: #efefef;
+    border-radius: 5px;
+}
+
+.social-links{
+    margin-bottom: 30px;
+}
+
+.social-links h3{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.social-links ul{
+    list-style-type: none;
+}
+
+.social-links ul li{
+    display: inline-block;
+    margin-right: 20px;
+    padding: 5px 15px;
+}
+
+.social-links ul li a{
+    color: #02075d;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.social-links ul li a:hover{
+    color: #ffa500;
+}
+
