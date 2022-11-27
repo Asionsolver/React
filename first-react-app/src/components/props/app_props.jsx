@@ -1,8 +1,8 @@
 import React,{Component} from 'react';
-import Profile from "./profile";
-import Skills from './profile/skills';
+import Profile from "../profile";
+import Skills from '../profile/skills';
 // import MyProps from './props';
-import Bio from './profile/bio';
+import Bio from '../profile/bio';
 class App extends Component {
   render() {
     return (
