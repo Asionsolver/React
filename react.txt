@@ -10,3 +10,14 @@ Two layer of Components.
 
 2. Representation layer (Required)
 ! JSX
+
+* 3. What is Event?
+  Event is an object which is only triggers when somethings special happens and return an object to the listener which contain information related to that event.
+
+  Ex: Button click, Input Element, Form Submission etc.
+
+! Note: Event is only way to interact with users and get users feedback.
+
+? Every Event has -
+    - Name
+    - listener Function

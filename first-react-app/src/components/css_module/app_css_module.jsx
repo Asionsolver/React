@@ -3,9 +3,9 @@ import React,{Component} from "react";
 
 import './app.css';
 // import './css_module//button.module.css';
-import Button from "./css_module/button";
-import BoxA from "./css_module/box_a";
-import BoxB from "./css_module/box_b";
+import Button from "./button";
+import BoxA from "./box_a";
+import BoxB from "./box_b";
 
 
 const myHeader ={
