@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'reParsing error: [BABEL] F:\Code\React\first-react-app\src\index.js: Using `babel-preset-react-app` requires that yact-dom/client';
 import './index.css';
 import App from './components/app';
 import reportWebVitals from './reportWebVitals';
