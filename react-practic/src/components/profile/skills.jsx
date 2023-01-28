@@ -1,15 +1,16 @@
 import React from "react";
 // import "./profile.style.css";
 
-const Skills = ()=>{
+const Skills = (props)=>{
+    
     return(
         <div className="skills">
                         <h3>Skills</h3>
                         <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>React</li>
+                            <li>{props.skillA}</li>
+                            <li>{props.skillB}</li>
+                            <li>{props.skillC}</li>
+                            <li>{props.skillD}</li>
                         </ul>
                     </div>
     )

@@ -1,12 +1,11 @@
 import React from "react";
 // import "./profile.style.css";
 
-const Bio = ()=>{
+const Bio = (props)=>{
     return(
         <div className="bio">
-            <h3>Ashis Kumar Pal</h3>
-
-            <p>UI & UX Designer and Frontend Developer</p>
+            <h3>{props.name}</h3>
+            <p>{props.title}</p>
         </div>
     )
 }

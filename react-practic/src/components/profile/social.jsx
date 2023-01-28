@@ -2,16 +2,16 @@
 import React from "react";
 // import "./profile.style.css";
 
-const Social = ()=>{
+const Social = (props)=>{
     return(
         <div className="social">
                         <h3>Social</h3>
                         <ul>
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">Instagram</a></li>
-                            <li><a href="#">Linkedin</a></li>
-                            <li><a href="#">Github</a></li>
+                            <li><a href="#">{props.socialA}</a></li>
+                            <li><a href="#">{props.socialB}</a></li>
+                            <li><a href="#">{props.socialC}</a></li>
+                            <li><a href="#">{props.socialD}</a></li>
+                            <li><a href="#">{props.socialE}</a></li>
                         </ul>
                     </div>
     )
