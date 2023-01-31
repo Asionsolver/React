@@ -9,3 +9,6 @@ function FunctionalComponents() {
 }
 
 export default FunctionalComponents;
+
+
+// Functional Components / Stateless Components / Dumb Components

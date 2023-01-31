@@ -11,6 +11,9 @@ Two layer of Components.
 2. Representation layer (Required)
 ! JSX
 
+
+!  Functional Components / Stateless Component / Dumb Components
+!  Class Based Components / Stateful Component / Smart Component
 * 3. What is Event?
   Event is an object which is only triggers when somethings special happens and return an object to the listener which contain information related to that event.
 
@@ -21,3 +24,4 @@ Two layer of Components.
 ? Every Event has -
     - Name
     - listener Function
+
