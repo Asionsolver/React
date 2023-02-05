@@ -24,4 +24,14 @@ Two layer of Components.
 ? Every Event has -
     - Name
     - listener Function
+    
+! There are four main method to style react app
+
+1. Inline CSS 
+2. CSS Class
+3. CSS Module (Better way to style component)
+4. CSS (Styled Component)
+
+! What is CSS Module?
+In simpler terms, CSS Modules allows us to use the same class name in multiple files without clashes since each class name is given a unique programmatic name. This is especially useful in larger applications. Every class name is scoped locally to the specific component in which it is being imported.
 
