@@ -5,13 +5,21 @@ class Index extends Component {
         name: '',
         country: '',
         bio: '',
-        birthDate: ''
+        birthDate: '',
+        gender: '',
+        agree: false
     }
 
     handleChange = (event) => {
         // console.log(event.target.name);
         this.setState({
             [event.target.name]: event.target.value
+        })
+    }
+
+    handleCheckBox = (event) =>{
+        this.setState({
+            agree:event.target.checked
         })
     }
 
@@ -31,6 +39,16 @@ class Index extends Component {
 
                 <textarea className="form-control my-3" name="bio" placeholder="Tell me about yourself" onChange={this.handleChange} value ={bio}></textarea>
                 <input className="form-control my-3" type="date" name="birthDate" value ={birthDate} onChange={this.handleChange} />
+
+                <div className="form-check">
+                <input type="radio" name="gender" value ="Male" onChange={this.handleChange}/> Male
+                <input type="radio" name="gender" value ="Female" onChange={this.handleChange} /> Female
+                <input type="radio" name="gender" value ="Female" onChange={this.handleChange} /> Other
+                </div>
+
+                <div className="check-box">
+                    <input type="checkbox" name="agree" onChange={this.handleCheckBox} />I agree all the terms and condition
+                </div>
                 <button className="btn btn-primary" onClick={()=>console.log(this.state)}>Show Data</button>
             </div>
         );
