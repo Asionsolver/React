@@ -7,7 +7,8 @@ class Index extends Component {
         bio: '',
         birthDate: '',
         gender: '',
-        agree: false
+        agree: false,
+        skills: []
     }
 
     handleChange = (event) => {
@@ -23,8 +24,21 @@ class Index extends Component {
         })
     }
 
+    handleSkillChange = (event) =>{
+        if(event.target.checked){
+            this.setState({
+                skills: [...this.state.skills, event.target.value]
+            })
+        }else{
+            const filteredSkills = this.state.skills.filter(skill => skill !== event.target.value);
+            this.setState({
+                skills: filteredSkills
+            })
+        }
+    }
+
     render() {
-        const { name, country, bio, birthDate } = this.state;
+        const { name, country, bio, birthDate,skills } = this.state;
         return (
             <div className="container">
                 <input className="form-control my-3" type="text" name='name' placeholder="Ashis kumar" onChange={this.handleChange} value ={name} />
@@ -44,6 +58,13 @@ class Index extends Component {
                 <input type="radio" name="gender" value ="Male" onChange={this.handleChange}/> Male
                 <input type="radio" name="gender" value ="Female" onChange={this.handleChange} /> Female
                 <input type="radio" name="gender" value ="Female" onChange={this.handleChange} /> Other
+                </div>
+                <div className="skill">
+                    <input type="checkbox" name="skills" value="Javascript" onChange={this.handleSkillChange} checked={skills.includes('Javascript')}/>Javascript
+                    <input type="checkbox" name="skills" value="React" onChange={this.handleSkillChange} checked={skills.includes('React')}/>React
+                    <input type="checkbox" name="skills" value="NodeJs" onChange={this.handleSkillChange} checked={skills.includes('NodeJs')}/>NodeJs
+                    <input type="checkbox" name="skills" value="Vue" onChange={this.handleSkillChange} checked={skills.includes('Vue')}/>Vue
+                    <input type="checkbox" name="skills" value="AngularJs" onChange={this.handleSkillChange} checked={skills.includes('AngularJs')}/>AngularJs
                 </div>
 
                 <div className="check-box">
