@@ -2,18 +2,18 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import TextInput from './textInput';
 
-const Form = ({ value, agreement, handleChange, handleAgreement, handleSubmit }) => {
+const Form = ({ value, errors, agreement, handleChange, handleAgreement, handleSubmit }) => {
     return (
         <form onSubmit={handleSubmit}>
-            <TextInput name="email" label="Email" type="email" value={value.email} onHandleChange={handleChange} placeholder="Enter Email" />
-            <TextInput name="username" label="Username" value={value.username} onHandleChange={handleChange} placeholder="Enter Username" />
+            <TextInput name="email" label="Email" type="email" value={value.email} onHandleChange={handleChange} placeholder="Enter Email" errors={errors.email}/>
+            <TextInput name="username" label="Username" value={value.username} onHandleChange={handleChange} placeholder="Enter Username" errors={errors.username}/>
 
 
-            <TextInput name="password" label="Password" type="password" value={value.password} onHandleChange={value.handleChange} placeholder="Enter Password" />
+            <TextInput name="password" label="Password" type="password" value={value.password} onHandleChange={value.handleChange} placeholder="Enter Password" errors={errors.password}/>
 
-            <TextInput name="phone" label="Phone" type="tel" value={value.phone} onHandleChange={handleChange} placeholder="Enter Phone" /> 
+            <TextInput name="phone" label="Phone" type="tel" value={value.phone} onHandleChange={handleChange} placeholder="Enter Phone" errors={errors.phone}/> 
             
-            <TextInput name="birthDate" label="BirthDate" type="date" value={value.birthDate} onHandleChange={handleChange} />
+            <TextInput name="birthDate" label="BirthDate" type="date" value={value.birthDate} onHandleChange={handleChange} errors={errors.birthDate }/>
 
             <div className='form-group'>
                 <label>
@@ -25,7 +25,7 @@ const Form = ({ value, agreement, handleChange, handleAgreement, handleSubmit })
                 <label className='ms-3'>
                     <input className='form-group mx-1' type="radio" name="gender" value='Other' onChange={handleChange} />
                 </label>Other
-
+                {errors.gender && <div className='invalid-feedback'>{errors.gender}</div>}
             </div>
 
             <div className='form-group '>
@@ -43,9 +43,11 @@ const Form = ({ value, agreement, handleChange, handleAgreement, handleSubmit })
 Form.prototype = {
     value: PropTypes.object.isRequired,
     agreement: PropTypes.bool.isRequired,
+    errors: PropTypes.object.isRequired,
     handleChange: PropTypes.func.isRequired,
     handleAgreement: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired
+
 }
 
 
