@@ -1,22 +1,19 @@
-import React, { Component } from 'react';
-import './app.module.css';
-import Form from './form';
+import React, { Component } from "react";
+import Form from "./form";
+import PropTypes from "prop-types";
 
-const initialState = {
-    value: {
-        email: '',
-        username: '',
-        password: '',
-        phone: '',
-        birthDate: '',
-        gender: ''
-    }
+const initValue = {
+    name: '',
+    email: '',
+    password: '',
+    birthDate: '',
+    gender: ''
 }
 
-
 class SignUp extends Component {
+
     state = {
-        value: initialState,
+        value: initValue,
         agreement: false,
         errors: {}
     }
@@ -38,60 +35,57 @@ class SignUp extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        const { errors, isValid } = this.validate();
+        const {errors, isValid} = this.validate();
         if(isValid){
+            this.props.createUser(this.state.value);
             console.log(this.state.value);
             event.target.reset();
-            this.setState({value: initialState, agreement: false, errors: {}});
+            this.setState({
+                value: initValue,
+                agreement: false,
+                errors: {}
+            })
         } else {
-            // console.log(errors);
-            this.setState({ errors });
-        } 
+            this.setState({
+                errors
+            })
+        }
+
     }
 
     validate = () => {
         const errors = {};
-        const { value:{username, email, password,phone,gender,birthDate} } = this.state;
-
-        if(!username){
-            errors.username = 'username is required.';
-        } else if(username.length < 3){
-            errors.username = 'username must be at least 3 characters long.';
-        } else if(username.length > 20){
-            errors.username = 'username must be less than 20 characters long.';
+        const {value:{name, email, password, birthDate,gender}} = this.state;
+    
+        if(!name){
+            errors.name = 'Please provide your name';
+        } else if(name.length < 3){
+            errors.name = 'Name must be at least 3 characters';
+        } else if(name.length > 20){
+            errors.name = 'Name must be less than 20 characters';
         }
 
         if(!email){
-            errors.email = 'Email is required.';
-        } else if(!email.includes('@')){
-            errors.email = 'Email must be valid.';
-        } else if(email.length > 30){
-            errors.email = 'Email must be less than 30 characters long.';
+            errors.email = 'Please provide your email';
         }
 
         if(!password){
-            errors.password = 'Password is required.';
-        } else if(password.length < 6){
-            errors.password = 'Password must be at least 6 characters long.';
+            errors.password = 'Please provide your password';
+        }   else if(password.length < 6){
+            errors.password = 'Password must be at least 6 characters';
         } else if(password.length > 20){
-            errors.password = 'Password must be less than 20 characters long.';
-        }
-
-        if(!phone){
-            errors.phone = 'Phone is required.';
-        } else if(phone.length < 10){
-            errors.phone = 'Phone must be at least 10 characters long.';
+            errors.password = 'Password must be less than 20 characters';
         }
 
         if(!birthDate){
-            errors.birthDate = 'Birth Date is required.';
-        }
+            errors.birthDate = 'Please provide your birth date';
+        } 
 
         if(!gender){
-            errors.gender = 'Please select your gender.';
+            errors.gender ="Please select your gender";
         }
 
-        return {
+        return{
             errors,
             isValid: Object.keys(errors).length === 0
         }
@@ -102,11 +96,17 @@ class SignUp extends Component {
     render() {
         return (
             <div>
-                <h1>Signup From</h1>
-                <Form value={this.state.value} handleChange={this.handleChange} handleSubmit={this.handleSubmit} handleAgreement={this.handleAgreement} agreement={this.state.agreement} errors ={this.state.errors} />
+                <h1>Sign Up</h1>
+                <Form value={this.state.value} errors={this.state.errors} handleChange={this.handleChange}  agreement={this.state.agreement}
+                handleAgreement={this.handleAgreement} handleSubmit={this.handleSubmit}
+                />
             </div>
         )
     }
+}
+
+SignUp.propTypes = {
+    createUser: PropTypes.func.isRequired
 }
 
 export default SignUp;
