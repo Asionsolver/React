@@ -21,7 +21,7 @@ ul {
 
 .square {
   background: #fff;
-  border: 1px solid #999;
+  border: 1px solid #e0e0e0;
   float: left;
   font-size: 24px;
   font-weight: bold;
@@ -39,7 +39,7 @@ ul {
 }
 
 .kbd-navigation .square:focus {
-  background: #ddd;
+  background: #ffffff;
 }
 
 .game {
