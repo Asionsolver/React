@@ -1,17 +1,19 @@
 import React from 'react';
-import './components/ticTacToe/app.css';
-import Game from './components/ticTacToe/game';
-
-
+import { Col, Container, Row } from 'reactstrap';
+import StackTodo from './components/StackTodo/index';
 const App = () => {
-    return (
-      <div className='app'>
-        <h1>React Tic Tac Toe</h1>
-        <Game/>
-      </div>
+  return (
+    <Container className='my-3'>
+      <Row>
+        <Col>
+        <h1>Project Stack Todo</h1>
+        <StackTodo />
+        </Col>
+      </Row>
+    </Container>
 
-    )
-  }
+  )
+}
 
 
 
